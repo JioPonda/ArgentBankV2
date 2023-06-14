@@ -1,0 +1,13 @@
+/* Style Page */
+@import url("./stylePages/home.css");
+@import url("./stylePages/signin.css");
+@import url("./stylePages/user.css");
+@import url("./stylePages/error.css");
+
+/* Style Components */
+@import url("./Stylecomponents/accounts.css");
+@import url("./Stylecomponents/featureshome.css");
+@import url("./Stylecomponents/footer.css");
+@import url("./Stylecomponents/header.css");
+@import url("./Stylecomponents/herohome.css");
+@import url("./Stylecomponents/signinuser.css");

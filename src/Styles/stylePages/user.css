@@ -1,0 +1,90 @@
+.main2 {
+  flex: 1;
+  min-height: calc(100vh - 30px);
+}
+  
+.bg-dark {
+  background-color: #12002b;
+}
+
+.header {
+  color: #fff;
+  margin-bottom: 2rem;
+  padding-top:5px;
+}
+
+.header2 {
+  color: #fff;
+  padding-bottom: 2rem;
+  background-color: #e0e6ed;
+  padding-top:5px;
+}
+
+.header2-title {
+  color: black;
+}
+
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#input-first-name {
+  padding: 10px;
+  width: 160px;
+  margin-right:10px;
+  border: 2px solid #c8d1d9;
+  font-size: 16px;
+}
+
+#input-first-name::placeholder {
+  color:#c3cfd9;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#input-last-name {
+  padding: 10px;
+  width: 160px;
+  margin-left:10px;
+  border: 2px solid #c8d1d9;
+  font-size: 16px;
+}
+
+#input-last-name::placeholder {
+  color:#c3cfd9;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button-save {
+  background-color: #ffffff;
+  color: #6559f5;
+  border: 1px solid #6559f5;
+  height:30px;
+  width:100px;
+  margin-right:10px;
+  font-weight: bold;
+}
+
+.button-cancel {
+  background-color: #ffffff;
+  color: #6559f5;
+  border: 1px solid #6559f5;
+  height:30px;
+  width:100px;
+  margin-left:10px;
+  font-weight: bold;
+}
+
+.container-buttonsSaveAndCancel {
+  margin-top:10px;
+}
+
+.error-message-editProfile {
+  color:red;
+  font-size: 15px;
+}
