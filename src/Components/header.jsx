@@ -10,6 +10,7 @@ function Header() {
   const stateRetrieved = useSelector((state) => state);
   const dispatch = useDispatch();
 
+  /// Log out and token deletion function
   function submissionLogOut() {
     dispatch(actionLogOut());
     deleteTokenInLocalStorage();

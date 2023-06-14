@@ -2,7 +2,7 @@ import React from "react";
 
 function Accounts({ userProfileDisplay }) {
   return (
-    // Affichage du profil en mode habituel
+    // Display profile in usual mode
     <div>
       {userProfileDisplay === "modeUsual" ? (
         <div>
@@ -42,7 +42,7 @@ function Accounts({ userProfileDisplay }) {
           </p>
         </div>
       ) : (
-        // Affichage du profil en mode édition
+        // Display profile in edit mode
         <div className="container-accounts-information">
           <h2 className="sr-only">Accounts</h2>
           <section className="account2">

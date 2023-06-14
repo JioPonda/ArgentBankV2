@@ -37,8 +37,8 @@ function App() {
     }
   }
 
-  // if you left the application when your are online and go to an other website, then if you returned to
-  // the application you will keep your online status and you won't have to log in again
+  // if you left the application when your are log in and go to an other website, then if you returned to
+  // the application you will keep your log in status and you won't have to log in again
 
   useEffect(() => {
     retrievePersistentConnection();
@@ -47,9 +47,6 @@ function App() {
   return (
     <div>
       <Router>
-        {/*The Routes component is equivalent of the Switch component 
-        If the 3 top path have not been find so the component Error is called
-        */}
         <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/Home" />} />

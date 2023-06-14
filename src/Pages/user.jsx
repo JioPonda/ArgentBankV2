@@ -15,17 +15,17 @@ function User() {
   const [entryLastName, setEntryLastName] = useState("");
   const dispatch = useDispatch();
 
-  // Fonction pour ouvrir l'affichage de modification du profil
+  // Function to open profile editing view
   function openModificationDisplayOfProfile() {
     setEditName(true);
   }
 
-  // Fonction pour ouvrir l'affichage du profil
+  // Function to open the profile display
   function openDisplayOfProfile() {
     setEditName(false);
   }
 
-  // Fonction pour enregistrer les données du profil
+  // Function to save profile data
   function recordingDataProfile() {
     const regexNames = /^[a-zA-Z-]+$/;
     let namesAreValid =
@@ -57,7 +57,7 @@ function User() {
   return (
     <main className="main2 bg-dark">
       {editName === false ? (
-        // Affichage du profil en mode habituel
+        // Display profile in usual mode
         <div>
           <div className="header">
             <h1>
@@ -75,7 +75,7 @@ function User() {
           <Accounts userProfileDisplay="modeUsual" />
         </div>
       ) : (
-        // Affichage du profil en mode édition
+        // Display profile in edit mode
         <div>
           <div className="header2">
             <h1 className="header2-title">Welcome back</h1>
@@ -98,7 +98,7 @@ function User() {
             {stateRetrieved.profileError
               ? (console.log(stateRetrieved),
                 (
-                  // Affichage du message d'erreur si les données sont invalides
+                  // Display the error message if the data is invalid
                   <p className="error-message-editProfile">
                     FirstName / LastName are missing or FirstName / LastName
                     have a bad format.

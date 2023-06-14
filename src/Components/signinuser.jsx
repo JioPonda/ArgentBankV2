@@ -13,48 +13,43 @@ import { recordOfTokenInLocalStorage } from "../Services/localStorageManagement.
 import { getUserProfile } from "../Services/apiCalls";
 
 function SignInUser() {
-  // États locaux
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-
-  // Dispatch et sélecteur Redux
   const dispatch = useDispatch();
   const stateRetrieved = useSelector((state) => state);
-
-  // Navigation
   const navigate = useNavigate();
 
-  // Fonction de soumission du formulaire de connexion
+  // Login form submit function
   function submissionSignIn(event) {
     event.preventDefault();
     getTokenLogin(email, password)
       .then((token) => {
-        // Authentification réussie
-        dispatch(actionLogInPass(token)); // Dispatch de l'action pour connecter l'utilisateur
+        // Successful authentication
+        dispatch(actionLogInPass(token)); // Dispatch the action to connect the user
         getUserProfile(token)
           .then((response) => {
-            // Récupération du profil utilisateur
-            dispatch(actionGetUserProfile(response)); // Dispatch de l'action pour stocker le profil utilisateur
-            recordOfTokenInLocalStorage(token, rememberMe); // Enregistrement du token dans le stockage local
+            // Successful user profile recovery
+            dispatch(actionGetUserProfile(response));
+            recordOfTokenInLocalStorage(token, rememberMe);
           })
           .catch((error) => {
-            // Échec de la récupération du profil utilisateur
-            dispatch(actionGetUserProfileFail()); // Dispatch de l'action pour gérer l'échec de la récupération du profil
+            // Failed to retrieve user profile
+            dispatch(actionGetUserProfileFail());
             console.log("error: " + error);
           });
       })
       .catch((error) => {
-        // Échec de l'authentification
-        dispatch(actionLogInFail(error)); // Dispatch de l'action pour gérer l'échec de l'authentification
+        // Authentication failed
+        dispatch(actionLogInFail(error));
         console.log("error: " + error);
       });
   }
 
-  // Effet qui se déclenche lorsque l'état "logIn" dans le store Redux change
+  // Effect that fires when the "logIn" state in the Redux store changes
   useEffect(() => {
     if (stateRetrieved.logIn === true) {
-      // Si l'utilisateur est connecté, redirection vers la page "/User"
+      // If the user is logged in, redirect to the "/User" page
       navigate("/User");
     }
   }, [stateRetrieved, navigate]);
@@ -91,7 +86,7 @@ function SignInUser() {
           <label htmlFor="remember-me">Remember me</label>
         </div>
         <button className="sign-in-button">Sign In</button>
-        {stateRetrieved.error ? (
+        {stateRetrieved.profileError ? (
           <p className="error-message-login">
             Username or password is wrong, or the both. Please retry your
             typing.
